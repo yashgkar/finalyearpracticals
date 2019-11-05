@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.datasets import load_iris
 iris = load_iris()
-data_set = pd.DataFrame(data= np.c_[iris['data'], iris['target']], columns= iris['feature_names'] + ['target'])
+data_set = pd.DataFrame(data= np.c_[iris['data'], iris['target']],columns= iris['feature_names'] + ['target'])
 # Complete information of all attributes of Iris
 print('\n', 'DATA SET INFORMATION'.center(45, '_'))
 print(data_set.info())
@@ -21,16 +21,15 @@ print('\n', 'DATA SET MEMORY USAGE'.center(45, '_'))
 print(data_set.memory_usage())
 # Counting any missing data (if any else zero)
 def num_missing(x):
-  return sum(x.isnull())
+    return sum(x.isnull())
 #Applying per column:
 print('\n', 'MISSING VALUE CHECK'.center(45, '_'))
 print("Missing values per column:")
-print(data_set.apply(num_missing, axis=0)) 
+print(data_set.apply(num_missing, axis=0))
 #axis=0 defines that function is to be applied on each column
 # Plotting Histogram
 # #1 All Features
-data_set[['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)','petal width (cm)']].plot.hist(bins=10,
-                                                                                                      title='All features')
+data_set[['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)','petal width (cm)']].plot.hist(bins=10, title='All features')
 plt.show()
 # #2 Only 2 features at a time
 data_set[['sepal length (cm)', 'sepal width (cm)']].plot.hist(bins=10, title='Sepal Features')
@@ -40,4 +39,3 @@ plt.show()
 # Plotting Boxplot
 data_set.plot.box(title="All Features with outliers")
 plt.show()
-# Try noticing the 'o', those are outliers. The ones who are not in InterQuertile Range (IQR) are Outliers

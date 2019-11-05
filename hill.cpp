@@ -1,4 +1,3 @@
-//HILL CLIMBING
 #include<iostream>
 #include<cstdio>
 using namespace std;
@@ -40,21 +39,3 @@ int main(){
  printf("\n");
  return 0;
 }
-/*
-***output***
-4                                                                                                                                      
-33                                                                                                                                     
-43                                                                                                                                     
-76                                                                                                                                     
-23                                                                                                                                     
-After swap 1:                                                                                                                          
-33 43 23 76                                                                                                                            
-After swap 2:                                                                                                                          
-33 23 43 76                                                                                                                            
-After swap 3:                                                                                                                          
-23 33 43 76                                                                                                                            
-Final Ans                                                                                                                              
-23 33 43 76  
-
-
-*/
